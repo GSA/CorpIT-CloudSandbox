@@ -20,15 +20,15 @@ Currently three endpoints have been verified to work:
 
 ### Get all Access Requests
 [GET]
-https://ryan-access-request-api.app.cloud.gov/v0/accessrequests/
+https://accessmanagement.app.cloud.gov/ears/v0/accessrequests/
 
 ### Get one Access Request
 [GET]
-https://ryan-access-request-api.app.cloud.gov/v0/accessrequests/{id}
+https://accessmanagement.app.cloud.gov/ears/v0/accessrequests/{id}
 
 ### Create one Access Request
 [POST]
-https://ryan-access-request-api.app.cloud.gov/v0/accessrequests/
+https://accessmanagement.app.cloud.gov/ears/v0/accessrequests/
 
 HTTP Payload:
 `{
