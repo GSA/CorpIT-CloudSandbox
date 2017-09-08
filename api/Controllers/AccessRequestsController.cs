@@ -6,7 +6,7 @@ using System.Linq;
 #region AccessRequestsController
 namespace api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("v0/[controller]")]
     public class AccessRequestsController : Controller
     {
         private readonly AccessRequestContext _context;
