@@ -40,6 +40,10 @@ HTTP Payload:
 A SOAPUI project for testing these endpoints is available here:
 [Tools/REST-CloudSandbox-soapui-project.xml](Tools/REST-CloudSandbox-soapui-project.xml)
 
+## A Note About the Data
+
+This API is using an in-memory database. So the POST command does store data that can be retrieved with the GET. However, I'm not sure how long the data lasts in memory. It definitely is wiped every time the app is restarted, if not before then.
+
 
 
 
