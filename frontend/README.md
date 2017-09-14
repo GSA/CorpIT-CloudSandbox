@@ -13,6 +13,16 @@ Code for the API can be found in the `/api` folder of this repository.
 + Run `dotnet run`
 + Access the running app in a browser at <http://localhost:5000>
 
+## Building and Pushing to Cloud.gov
+
+For cloud.gov, the manifest file is used: [manifest.yml](manifest.yml). This includes the app name.
+
+Here is the command to push to cloud.gov (had to specify the buildpack in the push commmand because otherwise there were build errors):
+
+`cf push -b https://github.com/cloudfoundry/dotnet-core-buildpack`
+
+
+
 Uses the CloudFoundry ASP.NET Core buildpack:
 
 https://github.com/cloudfoundry-incubator/dotnet-core-buildpack
