@@ -21,8 +21,6 @@ Here is the command to push to cloud.gov (had to specify the buildpack in the pu
 
 `cf push -b https://github.com/cloudfoundry/dotnet-core-buildpack`
 
-
-
 Uses the CloudFoundry ASP.NET Core buildpack:
 
 https://github.com/cloudfoundry-incubator/dotnet-core-buildpack
