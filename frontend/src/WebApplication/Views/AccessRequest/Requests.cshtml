@@ -1,0 +1,36 @@
+﻿@using WebApplication.Controllers
+@model List<AccessRequestAPIResponse>
+@{
+    ViewData["Title"] = "Acces Requests";
+}
+
+<table>
+    <tr>
+        <td style='width: 30%;'>
+            <img class="newappIcon" src="/images/newapp-icon.png">
+        </td>
+        <td>
+            <h1 id="message">Multiple Access Requests</h1>
+            </td>
+    </tr>
+</table>
+
+<h3>Access Requests</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Field 1</th>
+			    <th>Field 2</th>
+            </tr>
+        </thead>
+        <tbody>
+		@foreach(var request in Model){
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.Sample_Field_1</td>
+			    <td>@request.Sample_Field_2</td>
+            </tr>
+		}
+        </tbody>
+    </table>
