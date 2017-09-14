@@ -2,6 +2,18 @@
 
 Demonstration app using the sample Acces Request API on cloud.gov.
 
+## Testing the Web App
+
+### Home Page
+
+https://helloears.app.cloud.gov/
+
+### View All Access Requests
+https://helloears.app.cloud.gov/access
+
+### View One Access Request
+https://helloears.app.cloud.gov/access/{id}
+
 ## API
 Code for the API can be found in the `/api` folder of this repository.
 
