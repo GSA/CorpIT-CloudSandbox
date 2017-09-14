@@ -7,11 +7,13 @@ Code for the API can be found in the `/api` folder of this repository.
 
 ## Run the app locally
 
-1. Install ASP.NET Core by following the [Getting Started][] instructions
+1. Install ASP.NET Core .
 + cd into the app directory and then `src/WebApplication`
 + Run `dotnet restore`
 + Run `dotnet run`
 + Access the running app in a browser at <http://localhost:5000>
+
+It should also work in VS 2017 with the run command.
 
 ## Building and Pushing to Cloud.gov
 
