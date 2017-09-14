@@ -27,7 +27,7 @@
         <tbody>
 		@foreach(var request in Model){
             <tr>
-                <td>@request.Id</td>
+                <td><a href="/access/@request.Id">@request.Id</a></td>
                 <td>@request.Sample_Field_1</td>
 			    <td>@request.Sample_Field_2</td>
             </tr>
