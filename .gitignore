@@ -1,2 +1,4 @@
 api/bin/*
 api/obj/*
+frontend/src/WebApplication/bin/*
+frontend/src/WebApplication/obj/*
