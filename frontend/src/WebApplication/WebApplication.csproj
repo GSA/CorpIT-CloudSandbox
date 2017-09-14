@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.4.*" />
+	<DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.281" />	
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +35,6 @@
     <Folder Include="Views\AccessRequest\" />
   </ItemGroup>
   <Target Name="PrecompileScript" BeforeTargets="BeforeBuild;BeforePublish;">
-    <Exec Command="dotnet bundle" />
-  </Target>
+      </Target>
 
 </Project>
