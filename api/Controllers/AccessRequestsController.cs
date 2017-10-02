@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
+using System;
 using System.Linq;
 
 #region AccessRequestsController
@@ -16,10 +17,17 @@ namespace api.Controllers
         {
             _context = context;
 
-            if (_context.AccessRequests.Count() == 0)
+            try
             {
-                _context.AccessRequests.Add(new AccessRequest { Sample_Field_1 = "Request1" });
-                _context.SaveChanges();
+                if (_context.AccessRequests != null && _context.AccessRequests.Count() == 0)
+                {
+                    _context.AccessRequests.Add(new AccessRequest { Sample_Field_1 = "Request1" });
+                    _context.SaveChanges();
+                }
+            } catch(Npgsql.PostgresException ex) {
+                Console.WriteLine(ex.Detail);
+            } catch(Microsoft.EntityFrameworkCore.DbUpdateException ex) {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -50,8 +58,16 @@ namespace api.Controllers
                 return BadRequest();
             }
 
-            _context.AccessRequests.Add(request);
-            _context.SaveChanges();
+            try
+            {
+                _context.AccessRequests.Add(request);
+                _context.SaveChanges();
+			}
+			catch (Microsoft.EntityFrameworkCore.DbUpdateException ex)
+			{
+				Console.WriteLine(ex.Message);
+                return BadRequest(ex);
+			}
 
             return CreatedAtRoute("GetAccessRequest", new { id = request.Id }, request);
         }
