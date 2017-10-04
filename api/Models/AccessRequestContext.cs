@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Models
 {
@@ -7,6 +8,7 @@ namespace api.Models
         public AccessRequestContext(DbContextOptions<AccessRequestContext> options)
             : base(options)
         {
+            //Console.WriteLine("AccessRequestsController: point 20");
         }
 
         public DbSet<AccessRequest> AccessRequests { get; set; }
