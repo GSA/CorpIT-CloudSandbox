@@ -40,9 +40,22 @@ HTTP Payload:
 A SOAPUI project for testing these endpoints is available here:
 [Tools/REST-CloudSandbox-soapui-project.xml](Tools/REST-CloudSandbox-soapui-project.xml)
 
-## A Note About the Data
+## Database
 
-This API is using an in-memory database. So the POST command does store data that can be retrieved with the GET. However, I'm not sure how long the data lasts in memory. It definitely is wiped every time the app is restarted, if not before then.
+The data is stored in a PostgreSQL database hosted in cloud.gov.
+
+CREATE TABLE syntax is as follows:
+
+`
+create table "AccessRequests" 
+(                                                                                                                   
+"Id" serial primary key,
+"Sample_Field_1" varchar(20),
+"Sample_Field_2" varchar(20)
+);
+`
+
+
 
 
 
