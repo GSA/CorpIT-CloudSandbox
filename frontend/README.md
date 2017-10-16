@@ -1,6 +1,6 @@
 # HelloEARS app
 
-Demonstration app using the sample Acces Request API on cloud.gov.
+Demonstration app using the sample Access Request API on cloud.gov.
 
 ## Testing the Web App
 
