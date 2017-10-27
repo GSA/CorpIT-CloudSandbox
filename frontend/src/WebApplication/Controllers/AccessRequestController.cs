@@ -48,8 +48,8 @@ namespace WebApplication.Controllers
 					
 					var client2 = new HttpClient();
 					
-					client2.BaseAddress = new Uri("http://localhost:3000");
-					//client2.BaseAddress = new Uri("https://mock-ea-api.app.cloud.gov");
+					//client2.BaseAddress = new Uri("http://localhost:3000");
+					client2.BaseAddress = new Uri("https://mock-ea.app.cloud.gov");
 					var eaResponse = await client2.GetAsync($"/api/v0/applications/99/pocs");
 					
 					eaResponse.EnsureSuccessStatusCode();
