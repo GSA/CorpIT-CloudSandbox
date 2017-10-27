@@ -2,6 +2,13 @@
     ViewData["Title"] = "Single Access Request";
 }
 
+ <section id="breadcrumbs">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/access">Home</a></li>
+				<li class="breadcrumb-item active">Details</li>
+			</ol>
+	</section>
+<!--
 <table>
     <tr>
         <td style='width: 30%;'>
@@ -12,15 +19,17 @@
             </td>
     </tr>
 </table>
-
-<h3>Access Requests</h3>
+-->
+<h3>Access Request Details</h3>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Field 1</th>
+                <th>Access Request ID</th>
+                <th>Application ID</th>
 			    <th>Field 2</th>
-				<th>Title from EA API</th>
+				<th>POC Name - from GEAR</th>
+				<th>POC Email - from GEAR</th>
+				
             </tr>
         </thead>
         <tbody>
@@ -28,7 +37,8 @@
                 <td>@ViewData["id"]</td>
                 <td>@ViewData["sample_Field_1"]</td>
 			    <td>@ViewData["sample_Field_2"]</td>
-				<td>@ViewData["EATitle"]</td>
+				<td>@ViewData["EAName"]</td>
+				<td>@ViewData["EAEmail"]</td>
             </tr>
         </tbody>
     </table>
