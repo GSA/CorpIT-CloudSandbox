@@ -45,20 +45,20 @@ namespace WebApplication.Controllers
 					//call the new API
 					
 					//TODO: run this on cloud.gov
-					//TODO: replace this mock code with real POCs
 					
 					var client2 = new HttpClient();
 					
-					
-					client2.BaseAddress = new Uri("https://mock-ea-api.app.cloud.gov");
+					client2.BaseAddress = new Uri("http://localhost:3000");
+					//client2.BaseAddress = new Uri("https://mock-ea-api.app.cloud.gov");
 					var eaResponse = await client2.GetAsync($"/api/v0/applications/99/pocs");
 					
 					eaResponse.EnsureSuccessStatusCode();
 
 					var eaStringResult = await eaResponse.Content.ReadAsStringAsync();
-					var EArawAccessRequest = JsonConvert.DeserializeObject<EAAPIResponse>(eaStringResult);
+					var EArawAccessRequest = JsonConvert.DeserializeObject<List<EAPOCResponse>>(eaStringResult);
 
-					ViewData["EATitle"] = EArawAccessRequest.title;
+					ViewData["EAName"] = EArawAccessRequest[0].Name;
+					ViewData["EAEmail"] = EArawAccessRequest[0].Email;
 					
 
 
@@ -118,11 +118,25 @@ namespace WebApplication.Controllers
         public string Sample_Field_2 { get; set; }
 	}
 
-	public class EAAPIResponse
+	public class EAPOCResponse
 	{
-		public string userId { get; set; }
-		public string id { get; set; }
-        public string title { get; set; }
+		
+		   /* 
+	  {
+    "ParentId": 36580,
+    "Name": "James Monroe",
+    "Phone": null,
+    "Email": "James.Monroe@gsa.gov",
+    "Owner": null,
+    "Type": "Business"
+  }*/
+		
+		public string ParentId { get; set; }
+		public string Name { get; set; }
+        public string Phone { get; set; }
+		public string Email { get; set; }
+		public string Owner { get; set; }
+		public string Type { get; set; }
 
 	}
 	
