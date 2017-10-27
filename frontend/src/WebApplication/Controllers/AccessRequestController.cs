@@ -38,17 +38,30 @@ namespace WebApplication.Controllers
 					var stringResult = await response.Content.ReadAsStringAsync();
 					var rawAccessRequest = JsonConvert.DeserializeObject<AccessRequestAPIResponse>(stringResult);
 
-
-					/*return Ok(new
-                    {
-                        Temp = rawWeather.Main.Temp,
-                        Summary = string.Join(",", rawWeather.Weather.Select(x => x.Main)),
-                        City = rawWeather.Name
-                    });*/
-
 					ViewData["id"] = rawAccessRequest.Id;
 					ViewData["sample_Field_1"] = rawAccessRequest.Sample_Field_1;
 					ViewData["sample_Field_2"] = rawAccessRequest.Sample_Field_2;
+
+					//call the new API
+					
+					//TODO: run this on cloud.gov
+					//TODO: replace this mock code with real POCs
+					
+					var client2 = new HttpClient();
+					
+					
+					client2.BaseAddress = new Uri("https://mock-ea-api.app.cloud.gov");
+					var eaResponse = await client2.GetAsync($"/api/v0/applications/99/pocs");
+					
+					eaResponse.EnsureSuccessStatusCode();
+
+					var eaStringResult = await eaResponse.Content.ReadAsStringAsync();
+					var EArawAccessRequest = JsonConvert.DeserializeObject<EAAPIResponse>(eaStringResult);
+
+					ViewData["EATitle"] = EArawAccessRequest.title;
+					
+
+
 
 					return View("Index");
 				}
@@ -78,19 +91,8 @@ namespace WebApplication.Controllers
 
 					var stringResult = await response.Content.ReadAsStringAsync();
 					var rawAccessRequestList = JsonConvert.DeserializeObject<List<AccessRequestAPIResponse>>(stringResult);
-
-
-                    /*return Ok(new
-					{
-						Temp = rawWeather.Main.Temp,
-						Summary = string.Join(",", rawWeather.Weather.Select(x => x.Main)),
-						City = rawWeather.Name
-					});*/
-
-					/*ViewData["id"] = rawAccessRequestList.AccessRequests.ElementAt(0).Id;
-                    ViewData["sample_Field_1"] = rawAccessRequestList.AccessRequests.ElementAt(0).Sample_Field_1;
-					ViewData["sample_Field_2"] = rawAccessRequestList.AccessRequests.ElementAt(0).Sample_Field_2;
-                    */
+					
+                    
 					return View("Requests", rawAccessRequestList);
 				}
 				catch (HttpRequestException httpRequestException)
@@ -116,5 +118,14 @@ namespace WebApplication.Controllers
         public string Sample_Field_2 { get; set; }
 	}
 
+	public class EAAPIResponse
+	{
+		public string userId { get; set; }
+		public string id { get; set; }
+        public string title { get; set; }
+
+	}
+	
+	
 	
 }
