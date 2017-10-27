@@ -102,7 +102,48 @@ namespace WebApplication.Controllers
 			}
 		}
 
+        [HttpGet("[action]")]
+        public IActionResult Create()
+        {
+            return View("Create");
+        }
 
+        [HttpPost("[action]")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Sample_Field_1,Sample_Field_2")] AccessRequestAPIResponse request)
+        {
+        if (ModelState.IsValid)
+        {
+            using (var client = new HttpClient())
+            {
+                    try
+                    {
+                        string json = JsonConvert.SerializeObject(request);
+                        HttpContent content = new StringContent(json);
+                        content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                        client.BaseAddress = new Uri("https://accessmanagement.app.cloud.gov");
+                        var response = await client.PostAsync($"/ears/v0/accessrequests", content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("Access");
+                        }
+                        else
+                        {
+                            return BadRequest($"Error creating access request: {response.RequestMessage}");
+                        }
+                }
+                catch (HttpRequestException httpRequestException)
+                {
+                    return BadRequest($"Error creating access request: {httpRequestException.Message}");
+                }
+            }
+        }
+        else
+        {
+                return BadRequest($"Error creating access request: invalid model state");
+        }
+        }
     }
 	public class AccessRequestAPIResponseList
 	{
