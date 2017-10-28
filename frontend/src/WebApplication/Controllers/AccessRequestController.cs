@@ -110,7 +110,7 @@ namespace WebApplication.Controllers
 
         [HttpPost("[action]")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Sample_Field_1,Sample_Field_2")] AccessRequestAPIResponse request)
+        public async Task<IActionResult> Create([Bind("Sample_Field_1,Sample_Field_2")] AccessRequestPost request)
         {
         if (ModelState.IsValid)
         {
@@ -120,7 +120,7 @@ namespace WebApplication.Controllers
                     {
                         string json = JsonConvert.SerializeObject(request);
                         HttpContent content = new StringContent(json);
-                        content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                        content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
                         client.BaseAddress = new Uri("https://accessmanagement.app.cloud.gov");
                         var response = await client.PostAsync($"/ears/v0/accessrequests", content);
 
@@ -157,6 +157,12 @@ namespace WebApplication.Controllers
 		public string Id { get; set; }
 		public string Sample_Field_1 { get; set; }
         public string Sample_Field_2 { get; set; }
+	}
+
+	public class AccessRequestPost
+	{
+		public string Sample_Field_1 { get; set; }
+		public string Sample_Field_2 { get; set; }
 	}
 
 	public class EAPOCResponse
