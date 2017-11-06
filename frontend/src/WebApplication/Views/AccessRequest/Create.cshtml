@@ -1,0 +1,50 @@
+﻿@using WebApplication.Controllers
+@model AccessRequestAPIResponse
+@{
+    ViewData["Title"] = "Create";
+}
+
+<table>
+    <tr>
+        <td style='width: 20%;'>
+            <img style='width: 70%;' class="newappIcon" src="/images/cloud-1293201_1280.png">
+        </td>
+        <td>
+            <h1 id="message">Hello EARS!</h1>
+        </td>
+    </tr>
+</table>
+
+ <section id="breadcrumbs">
+                        <ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="..">Home</a></li>		
+						<li class="breadcrumb-item active"><a href="/access">Requests</a></li>
+                        <li class="breadcrumb-item active">Create</li>
+                        </ol>
+        </section>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+            </div>-->
+            <div class="form-group">
+                <label asp-for="Sample_Field_1" class="control-label"></label>
+                <input asp-for="Sample_Field_1" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Sample_Field_2" class="control-label"></label>
+                <input asp-for="Sample_Field_2" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/access/">Back to List</a>
+</div>
