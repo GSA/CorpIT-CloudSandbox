@@ -54,7 +54,13 @@ create table "AccessRequests"
 "Sample_Field_2" varchar(20)
 );
 `
+## Running API locally
 
+If you have a PostgreSQL database running locally, the API can run if you first add the appropriate LOCAL_CONNECTION_STRING environment variable.
+
+On Mac, here is the syntax:
+
+`export LOCAL_CONNECTION_STRING="Username={username};Password={password};Host=localhost;Port=5432;Database=accessrequestdb;Pooling=true;"`
 
 
 
