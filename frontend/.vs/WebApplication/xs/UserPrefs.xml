@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{1147A1AE-A354-4FBF-8864-2A75EF18EA65}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="manifest.yml">
+    <Files>
+      <File FileName="manifest.yml" Line="3" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebApplication" expanded="True" selected="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="src" expanded="True">
+              <Node name="WebApplication" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.src.WebApplication PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

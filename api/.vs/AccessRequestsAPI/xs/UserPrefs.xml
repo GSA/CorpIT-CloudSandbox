@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{F5D49EFB-6B94-4A13-9288-BEDC10EFA602}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="manifest.yml">
+    <Files>
+      <File FileName="Controllers/AccessRequestsController.cs" Line="6" Column="1" />
+      <File FileName="manifest.yml" Line="4" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AccessRequestsAPI" expanded="True">
+            <Node name="AccessRequestsAPI" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="manifest.yml" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/leo/Projects/GSA/CorpIT-CloudSandbox/api/Controllers/AccessRequestsController.cs" relfile="Controllers/AccessRequestsController.cs" line="30" column="1" />
+      <Breakpoint file="/Users/leo/Projects/GSA/CorpIT-CloudSandbox/api/Startup.cs" relfile="Startup.cs" line="44" column="1" />
+      <Breakpoint file="/Users/leo/Projects/GSA/CorpIT-CloudSandbox/api/Startup.cs" relfile="Startup.cs" line="65" column="755" />
+      <Breakpoint file="/Users/leo/Projects/GSA/CorpIT-CloudSandbox/api/Startup.cs" relfile="Startup.cs" line="170" column="1" />
+      <Breakpoint file="/Users/leo/Projects/GSA/CorpIT-CloudSandbox/api/Startup.cs" relfile="Startup.cs" line="172" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AccessRequestsAPI PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

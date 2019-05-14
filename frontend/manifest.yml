@@ -3,6 +3,7 @@ applications:
 - name: hello-ears-with-api
   random-route: true
   memory: 512M
+  stack: cflinuxfs3
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: 1
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
