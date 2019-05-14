@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{F5D49EFB-6B94-4A13-9288-BEDC10EFA602}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/AccessRequestsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="manifest.yml">
     <Files>
       <File FileName="Controllers/AccessRequestsController.cs" Line="6" Column="1" />
+      <File FileName="manifest.yml" Line="4" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AccessRequestsAPI" expanded="True">
-            <Node name="AccessRequestsAPI" expanded="True" selected="True">
+            <Node name="AccessRequestsAPI" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
+              <Node name="manifest.yml" selected="True" />
             </Node>
           </Node>
         </State>
